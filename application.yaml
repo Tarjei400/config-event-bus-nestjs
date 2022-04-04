@@ -1,0 +1,32 @@
+port: 8080
+config-server:
+  url: "http://localhost:8888"
+  appName: "test-config-server"
+  enabled: false
+
+rabbitmq:
+  connections:
+    - name: app-rabbit
+      hostname: localhost
+      port: 5672
+      username: user
+      password: bitnami
+      exchange: exchange.a
+
+    - name: app-other
+      hostname: localhost
+      port: 5672
+      username: user
+      password: bitnami
+      exchange: exchange.b
+
+crypto-chill:
+  envs:
+    - DEV-1
+    - DEV-2
+    - DEV-3
+    - PLUTONIUM-4
+
+event-bus:
+  driver: rabbitmq
+
